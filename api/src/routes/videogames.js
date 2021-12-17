@@ -16,7 +16,8 @@ router.get('/', async (req,res,next) => {
   if (name) {
     let apiVideogames = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&search=${name}`);
        apiVideogames=apiVideogames.data.results.map(e => {
-        return {name:e.name,
+        return {id:e.id,
+                name:e.name,
                 img:e.background_image,
                 genres:e.genres.map(e=>e.name)}
                })
@@ -31,7 +32,8 @@ router.get('/', async (req,res,next) => {
      },
     });
     dbVideogames = dbVideogames.map(e=> {
-      return {name:e.name,
+      return {id:e.id,
+              name:e.name,
               img:e.img,
               genres:e.genres.map(e=> e.name)}
             });
@@ -40,7 +42,8 @@ router.get('/', async (req,res,next) => {
   try{
     let dbVideogames = await Videogame.findAll({include:Genre});
     dbVideogames = dbVideogames.map(e=> {
-      return {name:e.name,
+      return {id:e.id,
+              name:e.name,
               img:e.img,
               genres:e.genres.map(e=> e.name)}
             });
@@ -51,7 +54,8 @@ router.get('/', async (req,res,next) => {
     const page5 = await axios.get(page4.data.next);
         let result = page1.data.results.concat(page2.data.results,page3.data.results,page4.data.results,page5.data.results)
         let apiVideogames = result.map(e => {
-          return {name:e.name,
+          return {id:e.id,
+                  name:e.name,
                   img:e.background_image,
                   genres:e.genres.map(e=>e.name)}
                  })

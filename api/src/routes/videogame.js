@@ -17,16 +17,7 @@ router.post('/', async(req,res, next) => {
   }catch(err){
     next(err);
   }
-    // const { name, img, rating, description, releaseDate, platforms, slug} = req.body;
-    // Videogame.create({name, img, rating, description, releaseDate, platforms})
-    // .then((newVideogame) =>{
-    //   newVideogame.addGenre(slug).then(()=>{
-    //     res.json(newVideogame)
-    //   })
-    // }) 
-    // .catch((err)=> {
-    //   next(err);
-    // })
+
   })
 
 router.get('/:id' , async (req,res , next)=>{
@@ -68,3 +59,17 @@ router.get('/:id' , async (req,res , next)=>{
 })  
 
 module.exports=router
+
+
+
+
+    // const { name, img, rating, description, releaseDate, platforms, slug} = req.body;
+    // Videogame.create({name, img, rating, description, releaseDate, platforms})
+    // .then((newVideogame) =>{
+    //   newVideogame.addGenre(slug).then(()=>{
+    //     res.json(newVideogame)
+    //   })
+    // }) 
+    // .catch((err)=> {
+    //   next(err);
+    // })
