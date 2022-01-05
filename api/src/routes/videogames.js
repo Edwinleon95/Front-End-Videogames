@@ -19,6 +19,7 @@ router.get('/', async (req,res,next) => {
         return {id:e.id,
                 name:e.name,
                 img:e.background_image,
+                rating:e.rating,
                 genres:e.genres.map(e=>e.name)}
                })
     let dbVideogames = await Videogame.findAll({
@@ -35,9 +36,16 @@ router.get('/', async (req,res,next) => {
       return {id:e.id,
               name:e.name,
               img:e.img,
+              rating:e.rating,
               genres:e.genres.map(e=> e.name)}
             });
-      res.json([...dbVideogames, ...apiVideogames]);
+            let allVideogames = [...dbVideogames,...apiVideogames]
+            if (allVideogames.length > 15){
+              allVideogames = allVideogames.slice(0,15)
+              res.json(allVideogames)
+            }else if(allVideogames.length === 0){
+              res.json(['NotFound'])
+            }else res.json(allVideogames);
 }else { 
   try{
     let dbVideogames = await Videogame.findAll({include:Genre});
@@ -45,6 +53,7 @@ router.get('/', async (req,res,next) => {
       return {id:e.id,
               name:e.name,
               img:e.img,
+              rating:e.rating,
               genres:e.genres.map(e=> e.name)}
             });
     const page1 = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
@@ -57,6 +66,7 @@ router.get('/', async (req,res,next) => {
           return {id:e.id,
                   name:e.name,
                   img:e.background_image,
+                  rating:e.rating,
                   genres:e.genres.map(e=>e.name)}
                  })
     const allVideogames = [...dbVideogames,...apiVideogames];

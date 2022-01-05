@@ -1,0 +1,18 @@
+.container-loading{
+  font-family: 'Montserrat', sans-serif;
+  width: 900px;
+  height: 500px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('https://images.hive.blog/0x0/https://cdn.steemitimages.com/DQmfVaWEkeYG8yfDA4iUXeQgb76rfeJa182oVgrsqXG4gBW/LOADINGPUB.gif');
+  border-radius: 15px;
+  box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -46,7 +46,7 @@ router.get('/:id' , async (req,res , next)=>{
                           name:results.name,
                           img:results.background_image,
                           rating:results.rating,
-                          description:results.description,
+                          description:results.description_raw,
                           releaseDate:results.released,
                           platforms:results.platforms.map(e => e.platform.name),
                           genres:results.genres.map(e => e.name)
