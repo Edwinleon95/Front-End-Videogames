@@ -23,7 +23,7 @@ import {
 
 export const getVideogames = () => {
     return (dispatch) => {
-        axios.get('http://localhost:3001/videogames').then((res) => {
+        axios.get(`${process.env.REACT_APP_PUERTO}videogames`).then((res) => {
             dispatch({
                 type: GET_VIDEOGAMES,
                 payload: res.data,
@@ -31,11 +31,10 @@ export const getVideogames = () => {
         })
     }
 }
-
 export const getGenres = () => {
     return async (dispatch) => {
         try {
-            const genres = await axios.get('http://localhost:3001/genres');
+            const genres = await axios.get(`${process.env.REACT_APP_PUERTO}genres`);
             return dispatch({
                 type: GET_GENRES,
                 payload: genres.data
@@ -49,7 +48,7 @@ export const getGenres = () => {
 export const getVideogameDetails = (id) => {
     return async (dispatch) => {
         try {
-            const videogame = await axios.get(`http://localhost:3001/videogame/${id}`);
+            const videogame = await axios.get(`${process.env.REACT_APP_PUERTO}videogame/${id}`);
             return dispatch({ type: GET_VIDEOGAME_DETAILS, payload: videogame.data })
         } catch (err) {
             console.log(err);
@@ -60,8 +59,8 @@ export const getVideogameDetails = (id) => {
 export const getVideogamesName = (name) => {
     return async (dispatch) => {
         try {
-            let videogames = await axios.get(`http://localhost:3001/videogames?name=${name}`);
-               return dispatch({ type: GET_VIDEOGAMES_NAME, payload: videogames.data }) 
+            let videogames = await axios.get(`${process.env.REACT_APP_PUERTO}videogames?name=${name}`);
+            return dispatch({ type: GET_VIDEOGAMES_NAME, payload: videogames.data })
         } catch (err) {
             console.log(err);
         }
@@ -89,11 +88,11 @@ export const clearStateFilters = () => {
 }
 
 export const filter = (state, genre) => {
-    let aux=state.filter(e => e.genres.includes(genre))
-    if(!aux.length){
-        aux=['NotFound']
+    let aux = state.filter(e => e.genres.includes(genre))
+    if (!aux.length) {
+        aux = ['NotFound']
     }
-    return ({ type: FILTER, payload:aux })
+    return ({ type: FILTER, payload: aux })
 }
 
 export const clearDetailState = () => {
@@ -103,7 +102,7 @@ export const clearDetailState = () => {
 export const createVideogame = (newVideogame) => {
     return async (dispatch) => {
         try {
-            const newGame = axios.post('http://localhost:3001/videogame', newVideogame)
+            const newGame = axios.post(`${process.env.REACT_APP_PUERTO}videogame`, newVideogame)
             return dispatch({ type: CREATE_VIDEOGAME, payload: newGame.data })
         } catch (err) {
             console.log(err);
