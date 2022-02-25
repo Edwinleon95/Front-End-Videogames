@@ -4,7 +4,7 @@ import './card.css';
 
 const Card = ({ name, img, genres, id, rating }) => {
     return (
-        <div className="container-card">
+        <div key={id} className="container-card">
             
                 <div className="card">
                     <figure>
@@ -14,7 +14,7 @@ const Card = ({ name, img, genres, id, rating }) => {
                         <h3>{name}</h3>
                         <p>⭐{rating}</p>
                         <div>
-                            <p >{genres.map(e => <h3 key={id}>{e}</h3>)}</p>
+                            {genres.map(e => <h3>{e}</h3>)}
                         </div>
                         <Link to={`/detail/${id}`}>  <p>ver mas</p>  </Link>
                     </div>

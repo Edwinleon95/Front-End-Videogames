@@ -31,7 +31,6 @@ const Home = () => {
 
     const onSearch = (name) => {
         dispatch(clearVideogamesState());
-        setCurrentPage(1);
         dispatch(getVideogamesName(name));
 
     }
@@ -115,7 +114,7 @@ const Home = () => {
                     filter={filters}
                 />
             </div>
-            {videogames.length ? <div><Cards videogames={currentCardsItems} /> </div> : <div><Loading /></div>}
+            {videogames.length ? <div><Cards videogames={currentCardsItems} key={currentCardsItems.id}/> </div> : <div><Loading /></div>}
         </div>
 
     )

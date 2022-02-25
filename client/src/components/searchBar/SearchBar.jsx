@@ -5,6 +5,7 @@ import { useState } from "react";
 
 
 const SearchBar = (props) => {
+    
     const {onSearch} = props;
     const [search,setSearch]=useState('');
 
@@ -12,15 +13,15 @@ const SearchBar = (props) => {
         setSearch(e.target.value);
     }
 
-    const onClick = async (e) => {
+    const onClick = (e) => {
         onSearch(search);
     }
 
  
     return (
         <div>
-            <input placeholder="Bucar..." onChange={onChange}></input>
-            <button onClick={onClick}>Buscar</button>
+            <input placeholder="Search..." onChange={onChange}></input>
+            <button onClick={onClick}>Search</button>
         </div>
     )
 }
