@@ -2,9 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector, } from "react-redux";
 import { platforms } from "../../redux/aux/sort";
-import Nav from "../nav/Nav";
 import { createVideogame } from "../../redux/actions/actions";
 import './create.css'
+import NavBar from "../nav/NavBar";
 
 const Create = () => {
     const dispatch = useDispatch();
@@ -77,7 +77,7 @@ const Create = () => {
 
     return (
         <div>
-            <Nav />
+            <NavBar />
             <form onSubmit={onSubmit} className="container-create">
                 <label>
                     <p>ReleaseDate:</p>

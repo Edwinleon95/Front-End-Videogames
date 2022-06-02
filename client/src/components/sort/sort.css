@@ -1,0 +1,80 @@
+:root{
+    --cinco : #77e6f2;
+    --cuatro: #419bbf;
+    --tres:#2f3973;
+    --dos:#8c55d9;
+    --uno:#5503A6;
+    --light-text:#fff;
+    --dark-text:#000;
+    --font-titles:'Press Start 2P', cursive;
+    --font-text: 'Gruppo', cursive;
+}
+
+.contenedor-select{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-select {
+    cursor: pointer;
+    color: var(--light-text);
+    font-family: var(--font-titles);
+    font-size: 12px;
+}
+.contenedor-options {
+    background: var(--tres);
+    font-family: var(--font-text);
+    font-weight: 900;
+    outline:0;
+    border:0!important;
+    flex: 1;
+    padding: 0 .5em;
+    color:#fff;
+    cursor:pointer;
+}
+ .select {
+    position: relative;
+    display: flex;
+    width: 15em;
+    height: 2em;
+    line-height: 2;
+    overflow: hidden;
+    border-radius: .25em;
+    
+ }
+ .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: var(--dos);
+    cursor:pointer;
+    pointer-events:none;
+    transition:.25s all ease;
+ }
+
+ .select:hover::after {
+    color: var(--light-text)
+ }
+
+ .contenedor-options option{
+     font-family: var(--font-text);
+     color: var(--light-text);
+ }
+
+ @media (max-width:1000px){
+.title-select {
+    font-size: 9px;
+}
+ .select {
+    width: 9em;
+    height: 1.5em;
+    line-height: 1.5;
+    
+ }
+ .select::after {
+    padding: 0 .5em;
+ }
+ }

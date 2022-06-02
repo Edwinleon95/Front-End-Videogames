@@ -1,0 +1,123 @@
+:root{
+    --cinco : #77e6f2;
+    --cuatro: #419bbf;
+    --tres:#2f3973;
+    --dos:#8c55d9;
+    --uno:#5503A6;
+    --light-text:#fff;
+    --dark-text:#000;
+    --font-titles:'Press Start 2P', cursive;
+    --font-text: 'Gruppo', cursive;
+}
+
+.contenedor-navbar{
+    display: flex;
+    width: 100%;
+    background-color: var(--uno);
+}
+.contenedor-title{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.contenedor-title:hover{
+    background-color: var(--dos);
+}
+.title{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.title p{
+    color: var(--light-text);
+    font-family: var(--font-titles);
+}
+
+.contenedor-navbar .contenedor-title .title .icon-controller{
+    width: 40px;
+    height: 40px;
+}
+.options{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.option{ 
+    display: flex;
+    text-decoration: none;
+    color:var(--light-text);
+    font-weight: 800;
+    font-size: 25px;
+    width: 10%;
+}
+
+.option p{
+    margin: auto;
+    font-family: var(--font-text);
+}
+
+.option:hover{
+    text-align: center;
+    background-color: var(--dos);
+    height: 80%;
+    width: 10%;
+}
+
+.filtros {
+    width: 20%;
+    display: flex;
+    background-color: var(--tres);
+    cursor: pointer;
+}
+.filtros:hover{
+    background-color: var(--dos);
+}
+.filtros p{
+    margin: auto;
+    color:var(--light-text);
+    font-family: var(--font-text);
+    font-weight: 800;
+    font-size: 25px;
+}
+
+
+@media (max-width:1000px){
+    
+    .contenedor-navbar .contenedor-title .title .icon-controller{
+        width: 25px;
+        height: 25px;
+    }
+    .title p{
+        font-size: 10px;
+    }
+    .option{ 
+        font-size: 15px;
+    }
+    
+    .filtros p{
+        font-size: 15px;
+    }
+}
+
+@media (max-width:650px){
+    .contenedor-navbar{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .contenedor-title{
+        width: 100%;
+    }
+    .options{
+        width: 100%;
+    }
+    .filtros {
+        width: 100%;
+    }
+}

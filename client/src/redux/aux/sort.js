@@ -32,3 +32,8 @@ export const platforms = [
                 'Android',
                 'iOS',
                 'Pc'] 
+
+
+export const options = [{name:'Sort by A to Z'}, {name:'Sort by Z to A'} ,{name:'Sort by ascending rating'} , {name:'Sort by descending rating'}];
+
+export const aggregate = [{name:'Videogames created'},{name:'Videogames api'}]

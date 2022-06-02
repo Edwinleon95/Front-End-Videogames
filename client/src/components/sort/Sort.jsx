@@ -1,21 +1,20 @@
 import React from "react";
+import './sort.css';
 
 
-const Sort = (props) => {
-
-    const { onChange } = props
+const Sort = ({ onChange, options, title }) => {
     return (
-        <div>
-            <div><span>odenar por</span></div>
-
-            <div> <select onChange={onChange}>
-                <option value='ordenaraz' >ordenaraz</option>
-                <option value='ordenarza'>ordenarza</option>
-                <option value='ordenarAsc'>mayor a menor</option>
-                <option value='ordenarDes'>menor a mayor</option>
-            </select></div>
+        <div className="contenedor-select">
+            <label className="title-select" htmlFor="select">{title}</label>
+            <div className="select">
+                <select className="contenedor-options"
+                    onChange={onChange}
+                    id='select'>
+                    {options?.map(e => <option value={e.name}>{e.name}</option>)}
+                </select>
+            </div>
         </div>
     )
-}
+};
 
 export default Sort;

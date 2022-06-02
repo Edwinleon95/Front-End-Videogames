@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { clearDetailState, getVideogameDetails } from "../../redux/actions/actions";
 import Loading from "../loading/Loading";
-import Nav from "../nav/Nav";
+import NavBar from "../nav/NavBar";
 import './detail.css'
 
 
@@ -21,7 +21,7 @@ const VideogameDetail = () =>{
 return (
     <div>
         <div>
-            <Nav/>
+            <NavBar/>
         </div>
         {Object.keys(detail).length ? (
             <main className="container-detail">

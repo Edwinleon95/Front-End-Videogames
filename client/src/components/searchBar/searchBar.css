@@ -1,0 +1,59 @@
+:root{
+    --cinco : #77e6f2;
+    --cuatro: #419bbf;
+    --tres:#2f3973;
+    --dos:#8c55d9;
+    --uno:#5503A6;
+    --light-text:#fff;
+    --dark-text:#000;
+    --font-titles:'Press Start 2P', cursive;
+    --font-text: 'Gruppo', cursive;
+}
+.form{
+    display: flex;
+    align-items: center;
+}
+.input-name{
+    width: 300px;
+    font-size: 15px;
+    font-family: var(--font-text);
+    background-color: var(--light-text);
+    height: 30px;
+    border-radius: 20px 0px 0px 20px;
+    border: none;
+    text-align: center;
+}
+
+.input-name:hover{
+    box-shadow: 0px 2px 15px 5px rgb(0, 0, 0 , .5);
+}
+.input-name:focus{
+    font-weight: 800;
+    outline: none;
+}
+
+.input-name:focus::placeholder{
+    color: var(--light-text);
+}
+
+.btn-input{
+    height: 30px;
+    border-radius: 0px 20px 20px 0px;
+    padding: 5px;
+    background-color: var(--light-text);
+    border: none;
+}
+
+
+.btn-input:hover{
+    box-shadow: 0px 2px 15px 5px rgb(0, 0, 0 , .5);
+
+}
+
+@media (max-width:1000px){
+
+    .input-name{
+        width: 150px;
+    }
+    
+}

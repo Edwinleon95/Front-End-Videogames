@@ -1,0 +1,15 @@
+.container-filters{
+    padding: 12px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--uno);
+}
+
+@media(max-width:650px){
+    .container-filters{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
