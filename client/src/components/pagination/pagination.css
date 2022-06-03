@@ -1,4 +1,72 @@
+:root{
+    --cinco : #77e6f2;
+    --cuatro: #419bbf;
+    --tres:#2f3973;
+    --dos:#8c55d9;
+    --uno:#5503A6;
+    --light-text:#fff;
+    --dark-text:#000;
+    --font-titles:'Press Start 2P', cursive;
+    --font-text: 'Gruppo', cursive;
+}
+
 .pagination{
+    padding-top: 24px;
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.button-prev{
+    color: var(--light-text);
+    cursor: pointer;
+    background-color: var(--cuatro);
+    font-family: var(--font-titles);
+    padding: 5px;
+    border: none;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, .9);
+    border-radius: 15px 0px 0px 15px;
+}
+
+.button-prev:hover{
+    color: var(--dark-text);
+    background-color: var(--cinco);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, .9);    
+    }
+.button-next{
+    color: var(--light-text);
+    cursor: pointer;
+    background-color: var(--cuatro);
+    font-family: var(--font-titles);
+    padding: 5px;
+    border: none;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, .9);
+    border-radius: 0px 15px 15px 0px;
+}
+
+.button-next:hover{
+    color: var(--dark-text);
+    background-color: var(--cinco);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, .9);    
+    }
+
+.btn-pages{
+    background-color: var(--cuatro);
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    font-family: var(--font-titles);
+    margin: 4px;
+}
+
+.btn-pages:hover{
+    background-color: var(--cinco);
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, .9);  
+}
+
+.active {
+    color: var(--light-text);
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, .9); 
 }

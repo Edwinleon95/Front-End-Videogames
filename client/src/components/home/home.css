@@ -1,3 +1,7 @@
-.home{
-    background-color: white;
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('../images/Seamless_Hexagonal_Stone_Texture_Paving_2.jpg');
 }

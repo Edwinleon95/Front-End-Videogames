@@ -76,6 +76,7 @@
 }
 .filtros:hover{
     background-color: var(--dos);
+    border-bottom: 2px solid var(--dark-text);
 }
 .filtros p{
     margin: auto;
