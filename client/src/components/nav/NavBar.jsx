@@ -5,7 +5,7 @@ import { IconController } from "../icons/IconController";
 
 const NavBar = ({openOverlay}) => {
     return (
-        <nav className="contenedor-navbar">
+        <nav className="contenedor-navbar" id="navBar">
             <div className="contenedor-title">
                 <Link className="title" to='/'>
                     <span><IconController /></span>

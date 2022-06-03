@@ -10,7 +10,7 @@ const Sort = ({ onChange, options, title }) => {
                 <select className="contenedor-options"
                     onChange={onChange}
                     id='select'>
-                    {options?.map(e => <option value={e.name}>{e.name}</option>)}
+                    {options?.map(e => <option value={e.name} key={e.name}>{e.name}</option>)}
                 </select>
             </div>
         </div>

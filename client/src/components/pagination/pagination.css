@@ -20,10 +20,13 @@
 
 
 .button-prev{
-    color: var(--light-text);
+    text-decoration: none;
+    color: var(--dark-text);
     cursor: pointer;
-    background-color: var(--cuatro);
-    font-family: var(--font-titles);
+    background-color: var(--cinco);
+    font-family: var(--font-text);
+    font-weight: 800;
+    font-size: 20px;
     padding: 5px;
     border: none;
     box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, .9);
@@ -31,15 +34,18 @@
 }
 
 .button-prev:hover{
-    color: var(--dark-text);
-    background-color: var(--cinco);
+    color: var(--light-text);
+    background-color: var(--cuatro);
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, .9);    
     }
 .button-next{
-    color: var(--light-text);
+    text-decoration: none;
+    color: var(--dark-text);
     cursor: pointer;
-    background-color: var(--cuatro);
-    font-family: var(--font-titles);
+    background-color: var(--cinco);
+    font-family: var(--font-text);
+    font-weight: 800;
+    font-size: 20px;
     padding: 5px;
     border: none;
     box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, .9);
@@ -47,12 +53,14 @@
 }
 
 .button-next:hover{
-    color: var(--dark-text);
-    background-color: var(--cinco);
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, .9);    
+    color: var(--light-text);
+    background-color: var(--cuatro);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, .9);
     }
 
 .btn-pages{
+    text-decoration: none;
+    color: var(--light-text);
     background-color: var(--cuatro);
     border: none;
     padding: 5px;
@@ -62,11 +70,13 @@
 }
 
 .btn-pages:hover{
+    color: var(--dark-text);
     background-color: var(--cinco);
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, .9);  
 }
 
 .active {
-    color: var(--light-text);
+    background-color: var(--cinco);
+    color: var(--dark-text);
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, .9); 
 }

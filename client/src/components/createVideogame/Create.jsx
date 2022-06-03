@@ -94,7 +94,7 @@ const Create = () => {
                 <label>
                     <p>Select genres:</p>
                     <ul>
-                        {genres.map(e => <li><input onChange={handleChangeGenres} type='checkbox' value={e.id} name="slug"></input>{e.name}</li>)}
+                        {genres.map(e => <li key={e.id} ><input onChange={handleChangeGenres} type='checkbox' value={e.id} name="slug"></input>{e.name}</li>)}
                     </ul>
                 </label>
 
@@ -111,7 +111,7 @@ const Create = () => {
 
                 <footer className="footer-create">
                     <label>
-                        <ul>{platforms.map(e => <li><input onChange={handleChangePlatforms} type='checkbox' value={e} name="platforms"></input>{e}</li>)}</ul>
+                        <ul>{platforms.map(e => <li key={e}><input onChange={handleChangePlatforms} type='checkbox' value={e} name="platforms"></input>{e}</li>)}</ul>
                     </label>
 
                     <div>

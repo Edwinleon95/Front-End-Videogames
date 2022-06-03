@@ -32,7 +32,7 @@ return (
                 <section>
                     <h2>{detail.name}</h2>
                     <ul>
-                    {detail.genres.map(e=><li>{e}</li>)}
+                    {detail.genres.map(e=><li key={e}>{e}</li>)}
                     </ul>
                     <p>{detail.description}</p>
                     
@@ -41,7 +41,7 @@ return (
                 </section>
 
                 <footer>
-                   <ul>🎮{detail.platforms.map(e => <li>{e}</li>)}🎮</ul>
+                   <ul>🎮{detail.platforms.map(e => <li key={e}>{e}</li>)}🎮</ul>
                 </footer>           
             </main>
            

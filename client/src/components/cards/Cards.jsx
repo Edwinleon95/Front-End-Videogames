@@ -6,13 +6,13 @@ import './cards.css'
 const Cards = ({ videogames }) => {
     return (
         <div className="cards">
-            {videogames?.map(e => e.id? <div><Card
+            {videogames?.map(e => e.id?<Card
                     name={e.name}
                     img={e.img}
                     genres={e.genres}
                     id={e.id}
                     rating={e.rating}
-                    key={e.id} /></div>: <div><Error/></div>)}
+                    key={e.id} />: <Error/>)}
         </div>
     )
 }

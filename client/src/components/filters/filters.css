@@ -5,6 +5,7 @@
     justify-content: space-around;
     align-items: center;
     background-color: var(--uno);
+    /* transition: all 400ms ease-out; */
 }
 
 @media(max-width:650px){
