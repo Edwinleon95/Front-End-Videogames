@@ -1,57 +1,53 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { clearDetailState, getVideogameDetails } from "../../redux/actions/actions";
+import { IconArrow } from "../icons/IconArrow";
 import Loading from "../loading/Loading";
-import NavBar from "../nav/NavBar";
 import './detail.css'
 
 
-const VideogameDetail = () =>{
-    const {id} = useParams()
+const VideogameDetail = () => {
+    const { id } = useParams()
     const dispatch = useDispatch()
-    const detail = useSelector((state)=>state.detail)
-    useEffect(()=>{
+    const detail = useSelector((state) => state.detail)
+    useEffect(() => {
         dispatch(getVideogameDetails(id))
         return () => {
-            dispatch(clearDetailState())   
+            dispatch(clearDetailState())
         }
-    },[dispatch,id])
-return (
-    <div>
-        <div>
-            <NavBar/>
+    }, [dispatch, id])
+
+    return (
+        <div className="container">
+            {
+                Object.keys(detail).length ?
+                    <main className="container-detail" >
+                        <img className="image" src={detail.img} alt={detail.name}></img>
+
+                        <Link className="link-home" to='/home'><IconArrow /></Link>
+
+                        <section>
+                            <h2>{detail.name}</h2>
+                            <span className="container-genres">
+                                {detail.genres.map(e => <p key={e}>{e}</p>)}
+                            </span>
+
+                            <p className="rating">⭐{detail.rating}⭐</p>
+                            <p className="description">{detail.description}</p>
+
+                            <p className="relasedate">🕚{detail.releaseDate}🕚</p>
+
+                            <span className="footer">
+                                🎮{detail.platforms.map(e => <p key={e}>{e}</p>)}🎮
+                            </span>
+                        </section>
+                    </main>
+                    : <Loading />
+            }
         </div>
-        {Object.keys(detail).length ? (
-            <main className="container-detail">
-                <header className="header">
-                <img className="image" src={detail.img} alt={detail.name}></img>
-                </header>
-
-                <section>
-                    <h2>{detail.name}</h2>
-                    <ul>
-                    {detail.genres.map(e=><li key={e}>{e}</li>)}
-                    </ul>
-                    <p>{detail.description}</p>
-                    
-                    <p>🕚{detail.releaseDate}🕚</p>
-                    <p>⭐{detail.rating}⭐</p>
-                </section>
-
-                <footer>
-                   <ul>🎮{detail.platforms.map(e => <li key={e}>{e}</li>)}🎮</ul>
-                </footer>           
-            </main>
-           
-           
-        ):( <div><Loading/></div>
-        )}
-       
-    </div>
-   
-)
+    )
 }
 
 export default VideogameDetail;
