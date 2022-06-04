@@ -18,7 +18,6 @@ export const Filters = ({ onSearch, onChange, filter }) => {
             <Sort onChange={filter}
                 options={[...genres,...aggregate]}
                 title={'Filter by: '} />
-            {/* <Filter filter={filter} /> */}
         </div>
     )
 };

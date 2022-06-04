@@ -4,21 +4,16 @@ import './home.css'
 import { apiVideogames, changeState, clearStateFilters, clearVideogamesState, dbVideogames, filter, getVideogamesName, orderAscRating, orderDesRating, sortaz, sortza } from "../../redux/actions/actions";
 import NavBar from "../nav/NavBar";
 import Pagination from "../pagination/Pagination";
-import { Filters } from "../filters/Filters";
+import Create from "../createVideogame/Create";
 
 const Home = () => {
     const dispatch = useDispatch();
     let videogames = useSelector((state) => state.videogames)
 
-
-
-    const [overlay, setOverlay] = useState(false)
-
-    const openOverlay = () => {
-        setOverlay(!overlay)
-    }
-
-
+    const [overlayCreate, setOverlayCreate] = useState(false);
+    const setOpenOverlayCreate = () => {
+        setOverlayCreate(!overlayCreate)
+    };
 
     const onSearch = (name) => {
         dispatch(clearVideogamesState());
@@ -77,23 +72,27 @@ const Home = () => {
     }
 
     return (
-        <>
-            <NavBar openOverlay={openOverlay} />
 
+        <div
+            className={`home ${overlayCreate ? 'overlay-active' : null}`}
+        >
+            
             {
-                overlay ?
-                    <Filters
-                        onSearch={onSearch}
-                        onChange={onChange}
-                        filter={filters}
-                        openOverlay={openOverlay} />
+                overlayCreate ?
+                    <Create setOpenOverlayCreate={setOpenOverlayCreate} />
                     : null
             }
-            
-            <div className="home">
-                <Pagination />
-            </div>
-        </>
+
+            <NavBar
+                setOpenOverlayCreate={setOpenOverlayCreate}
+                onSearch={onSearch}
+                onChange={onChange}
+                filter={filters}
+            />
+
+            <Pagination />
+        </div>
+
 
     )
 }

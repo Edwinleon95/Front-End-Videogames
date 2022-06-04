@@ -51,7 +51,8 @@ const Pagination = () => {
                             currentPage !== 1 ?
                                 <button
                                     className="button-prev"
-                                    onClick={onLeftClick}>Prev
+                                    onClick={onLeftClick}
+                                >Prev
                                 </button>
                                 : null
                         }
@@ -62,7 +63,8 @@ const Pagination = () => {
                                         className={`btn-pages ${parseInt(e) === currentPage ? 'active' : null}`}
                                         onClick={actualPage}
                                         id={e}
-                                        key={e}>{e}
+                                        key={e}
+                                    >{e}
                                     </button>)
                             }
                         </section>
@@ -71,7 +73,8 @@ const Pagination = () => {
                             currentPage !== totalPage ?
                                 <button
                                     className="button-next"
-                                    onClick={onRightClick}>Next
+                                    onClick={onRightClick}
+                                >Next
                                 </button>
                                 : null
                         }
@@ -96,7 +99,8 @@ const Pagination = () => {
                                 <a
                                     className="button-prev"
                                     onClick={onLeftClick}
-                                    href="#navBar">Prev
+                                    href="#navBar"
+                                >Prev
                                 </a>
                                 : null
                         }
@@ -108,7 +112,8 @@ const Pagination = () => {
                                         onClick={actualPage}
                                         id={e}
                                         href='#navBar'
-                                        key={e}>{e}
+                                        key={e}
+                                    >{e}
                                     </a>)
                             }
                         </section>
@@ -118,7 +123,8 @@ const Pagination = () => {
                                 <a
                                     className="button-next"
                                     onClick={onRightClick}
-                                    href="#navBar">Next
+                                    href="#navBar"
+                                >Next
                                 </a>
                                 : null
                         }

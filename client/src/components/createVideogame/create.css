@@ -1,65 +1,34 @@
+:root{
+    --cinco : #77e6f2;
+    --cuatro: #419bbf;
+    --tres:#2f3973;
+    --dos:#8c55d9;
+    --uno:#5503A6;
+    --light-text:#fff;
+    --dark-text:#000;
+    --font-titles:'Press Start 2P', cursive;
+    --font-text: 'Gruppo', cursive;
+  }
+
+.container-form{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .7);
+    overflow: hidden;
+}
+
 .container-create{
-font-family: 'Montserrat', sans-serif;
-width: 900px;
-overflow: hidden;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-background: white;
-border-radius: 15px;
-box-shadow: 7px 13px 37px rgba(0, 0, 0, .6);
-padding: 10px;
-overflow: hidden;
+width: 80%;
 text-align: center;
 display: flex;
 flex-direction: column;
+background-color: white;
 }
 
 
-.header-create {
-width: 100%;
-height: 200px;
-overflow: hidden;
-position: relative;
-}
-
-.image-create {
-width: 100%;
-height: 250px;
-}
-
-.section-create {
-padding: 10px;
-overflow: hidden;
-text-align: center;
-display: flex;
-flex-direction: column;
-}
-
-.input-create{
-text-align: center;
-margin: .5em 0;
-}
-
-.input-rating{
-    width: 200px;
-}
 
 
-.footer-create {
-width: 100%;
-height: 150px;
-background: darkcyan;
-color: white;
-position: relative;
-padding: 10px;
-overflow: hidden;
-text-align: center;
-display: flex;
-flex-direction: column;
-}
-
-.btn-create{
-    width: 200px;
-}

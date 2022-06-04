@@ -53,19 +53,19 @@
     color:var(--light-text);
     font-weight: 800;
     font-size: 25px;
-    width: 10%;
+    width: 50%;
+    font-family: var(--font-text);
+    cursor: pointer;background-color: transparent;
+    border: none;
 }
 
 .option p{
     margin: auto;
-    font-family: var(--font-text);
 }
 
 .option:hover{
-    text-align: center;
     background-color: var(--dos);
     height: 80%;
-    width: 10%;
 }
 
 .filtros {

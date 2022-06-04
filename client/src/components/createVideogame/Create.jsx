@@ -3,10 +3,9 @@ import { useState } from "react";
 import { useDispatch, useSelector, } from "react-redux";
 import { platforms } from "../../redux/aux/sort";
 import { createVideogame } from "../../redux/actions/actions";
-import './create.css'
-import NavBar from "../nav/NavBar";
+import './create.css';
 
-const Create = () => {
+const Create = ({setOpenOverlayCreate}) => {
     const dispatch = useDispatch();
     let genres = useSelector((state) => state.genres)
     genres = genres.map(e => e[0])
@@ -76,49 +75,92 @@ const Create = () => {
 
 
     return (
-        <div>
-            <NavBar />
+        <div className="container-form">
+            <button onClick={setOpenOverlayCreate}>Close</button>
             <form onSubmit={onSubmit} className="container-create">
-                <label>
-                    <p>ReleaseDate:</p>
-                    <input onChange={handleChangeRelaseDate} type='date' name="releaseDate" className="input-create"></input>
-                </label>
-                <label>
-                    <input onChange={handleChange} type='text' placeholder="insert url:" name="img" className="input-create"></input>
-                </label>
-
-                <label>
-                    <input onChange={handleChange} type='text' placeholder="insert name:" name="name" className="input-create"></input>
+                <label>ReleaseDate:
+                    <input
+                        onChange={handleChangeRelaseDate}
+                        type='date'
+                        name="releaseDate"
+                        className="input-create">
+                    </input>
                 </label>
 
                 <label>
-                    <p>Select genres:</p>
-                    <ul>
-                        {genres.map(e => <li key={e.id} ><input onChange={handleChangeGenres} type='checkbox' value={e.id} name="slug"></input>{e.name}</li>)}
-                    </ul>
+                    <input
+                        onChange={handleChange}
+                        type='text'
+                        placeholder="insert url:"
+                        name="img"
+                        className="input-create">
+                    </input>
                 </label>
 
                 <label>
-                    <textarea onChange={handleChange} placeholder="Descrption:" rows='10' cols='40' name="description" className="input-create"></textarea>
+                    <input
+                        onChange={handleChange}
+                        type='text'
+                        placeholder="insert name:"
+                        name="name"
+                        className="input-create">
+                    </input>
                 </label>
+
+                <label>Select genres:
+                    {genres.map(e =>
+                        <label key={e.id} >{e.name}
+                            <input
+                                onChange={handleChangeGenres}
+                                type='checkbox'
+                                value={e.id}
+                                name="slug">
+                            </input>
+                        </label>)
+                    }
+                </label>
+
                 <label>
-                    <div className="div-input-rating">
-                        <p>Raiting:</p>
-                        <input onChange={handleChange} type='range' min='0' max='5' step='0.01' name="rating" className="input-rating"></input>
-                    </div>
+                    <textarea
+                        onChange={handleChange}
+                        placeholder="Descrption:"
+                        rows='10'
+                        cols='40'
+                        name="description"
+                        className="input-create">
+                    </textarea>
                 </label>
 
+                <label>Raiting:
+                    <input
+                        onChange={handleChange}
+                        type='range'
+                        min='0'
+                        max='5'
+                        step='0.01'
+                        name="rating"
+                        className="input-rating">
+                    </input>
+                </label>
 
-                <footer className="footer-create">
-                    <label>
-                        <ul>{platforms.map(e => <li key={e}><input onChange={handleChangePlatforms} type='checkbox' value={e} name="platforms"></input>{e}</li>)}</ul>
-                    </label>
+                <label>
+                    {
+                        platforms.map(e =>
+                            <p key={e}>{e}
+                                <input
+                                    onChange={handleChangePlatforms}
+                                    type='checkbox'
+                                    value={e}
+                                    name="platforms">
+                                </input>
+                            </p>)
+                    }
+                </label>
 
-                    <div>
-                        <button type="submit" className="btn-create">Create Videogame</button>
-                    </div>
-                </footer>
-
+                <button
+                    type="submit"
+                    className="btn-create">Create Videogame
+                </button>
             </form>
         </div>
     )

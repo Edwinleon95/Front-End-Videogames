@@ -11,13 +11,12 @@
 }
 
 .pagination{
-    padding-top: 24px;
+    padding: 24px 0px 20px 0px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 
 .button-prev{
     text-decoration: none;

@@ -5,7 +5,6 @@ import { Route, Switch } from 'react-router-dom';
 import Home from './components/home/Home';
 import LandinPage from './components/landingPage/LandingPage';
 import VideogameDetail from './components/videogameDetail/VideogameDetail';
-import Create from './components/createVideogame/Create';
 function App() {
   const dispatch = useDispatch();
 
@@ -19,7 +18,6 @@ function App() {
       <Route exact path='/' component={LandinPage} />
       <Route exact path='/home' component={Home} />
       <Route exact path='/detail/:id' component={VideogameDetail} />
-      <Route exact path='/create' component={Create} />
     </Switch>
   );
 }
